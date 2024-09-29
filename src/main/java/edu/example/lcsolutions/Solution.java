@@ -4,6 +4,12 @@ import java.util.*;
 
 class Solution {
     Map<String, List<String>> map;
+
+    /**
+     * Group Anagrams
+     * @param strs
+     * @return
+     */
     public List<List<String>> groupAnagrams(String[] strs) {
         if(strs.length == 0){
             return null;
@@ -35,6 +41,11 @@ class Solution {
         return new ArrayList<>(map.values());
     }
 
+    /**
+     * Longest Consecutive Sequence
+     * @param nums
+     * @return
+     */
     public int longestConsecutive(int[] nums) {
         Set<Integer> numbers = new HashSet<>();
         for(int val : nums){
@@ -80,5 +91,27 @@ class Solution {
         List<List<String>> test= solution.groupAnagrams(new String[]{"bdddddddddd","bbbbbbbbbbc"});
         test.forEach(element -> element.forEach(System.out::println));
         System.out.println(test.size());
+    }
+
+
+    /**
+     * Best Time to Buy Stock - 1
+     */
+
+    public int maxProfit(int[] prices) {
+        if(prices.length == 0){
+            return 0;
+        }
+        int minPrice = prices[0], maxProfit = Integer.MIN_VALUE;
+        for(int i = 1; i < prices.length; i++){
+            int profit = prices[i] - minPrice;
+            if(prices[i] < minPrice){
+                minPrice = prices[i];
+            }
+            if(profit > maxProfit){
+                maxProfit = profit;
+            }
+        }
+        return maxProfit;
     }
 }

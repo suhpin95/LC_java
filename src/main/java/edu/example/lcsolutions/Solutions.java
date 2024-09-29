@@ -3,6 +3,12 @@ package edu.example.lcsolutions;
 import java.util.*;
 
 public class Solutions {
+
+    /**
+     * 3 sums without repetition
+     * @param nums
+     * @return
+     */
     public List<List<Integer>> threeSum(int[] nums) {
         if(nums == null || nums.length < 3) {
             return null;
@@ -31,6 +37,11 @@ public class Solutions {
         return result;
     }
 
+    /**
+     * Container with most water
+     * @param height
+     * @return
+     */
     public int maxArea(int[] height) {
         if(height == null || height.length == 0){
             return -1;
@@ -56,6 +67,12 @@ public class Solutions {
     }
 
     Map<Character, Character> map;
+
+    /**
+     * Valid Parentheses
+     * @param s
+     * @return
+     */
     public boolean isValid(String s) {
         if(s.length() == 0){
             return false;
@@ -63,9 +80,9 @@ public class Solutions {
         init();
         Stack<Character> stack = new Stack<>();
         for(char character : s.toCharArray()){
-            char top = stack.pop();
+            char topElement = stack.pop();
             if(map.containsKey(character)){
-                if(top != map.get(character)){
+                if(topElement != map.get(character)){
                     return false;
                 }
             } else {
