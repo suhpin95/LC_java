@@ -114,4 +114,27 @@ class Solution {
         }
         return maxProfit;
     }
+
+    /**
+     * Best Time to buy stock - 2
+     * @param prices
+     * @return
+     */
+    public int maxProfit2(int[] prices) {
+        int len = prices.length;
+        if(len == 0){
+            return 0;
+        }
+        int minPrice = prices[0], maxProfit = 0;
+        for(int i = 1; i < prices.length; i++){
+            if(prices[i] < minPrice){
+                minPrice = prices[i];
+            }
+            int profit = prices[i] - minPrice;
+            if(profit > maxProfit){
+                maxProfit = profit;
+            }
+        }
+        return maxProfit;
+    }
 }
