@@ -4,7 +4,7 @@ import java.util.*;
 
 public class SubString {
     String result = null;
-    Map<String, Node> nodeMap = new HashMap<String, Node>();
+    Map<String, Nodes> nodeMap = new HashMap<String, Nodes>();
     LinkedList<String> list = new LinkedList();
     public String getShortestWord(String doc, HashSet<String> dictionary) {
         WordIterator wi = new WordIterator(doc);
@@ -23,8 +23,8 @@ public class SubString {
     }
 }
 class Node {
-    Node head;
-    Node tail;
+    Nodes head;
+    Nodes tail;
     String data;
     int index;
 }
