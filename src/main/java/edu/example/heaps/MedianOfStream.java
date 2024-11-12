@@ -13,8 +13,8 @@ public class MedianOfStream {
         secondHalf = new PriorityQueue<>((a,b) -> b-a);
     }
 
-    public int getMedian(){
-        if(firstHalf.isEmpty() & secondHalf.isEmpty()){
+    public double findMedian() {
+        if(firstHalf.isEmpty() && secondHalf.isEmpty()){
             return -1;
         }
         if(firstHalf.size() == secondHalf.size()){

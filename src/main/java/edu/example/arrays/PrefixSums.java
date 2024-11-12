@@ -13,7 +13,7 @@ public class PrefixSums {
         /**
          * We check the summations here, which would mean that
          * if reach from previous sum after encountering number of elements
-         * at the same sum we are looking at the elements we want
+         * at the same sum; we are looking at the elements we want
          */
         for(int i = 0; i < len; i++) {
             sum += arr[i];

@@ -19,7 +19,7 @@ public class LRUCache {
     /**
      *
      * @param key
-     * @return
+     * @return value
      */
     public int get(int key) {
         Node node = cache.get(key);
@@ -33,8 +33,8 @@ public class LRUCache {
 
     /**
      *
-     * @param key
-     * @param value
+     * @param key ,unique id for the storing the value
+     * @param value ,value to be stored in the data structure
      */
     public void put(int key, int value) {
         if (cache.containsKey(key)) {

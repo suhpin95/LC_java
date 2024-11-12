@@ -22,4 +22,11 @@ public class CheapestFlight {
         }
         return price[dst] == Integer.MAX_VALUE ? -1 : price[dst];
     }
+
+    public static void main(String[] args) {
+        CheapestFlight cheapestFlight = new CheapestFlight();
+
+        int[][] flights = {  {0,1,100},{1,2,100},{2,0,100},{1,3,600},{2,3,200}};
+        cheapestFlight.findCheapestPrice(4, flights, 0, 2, 1);
+    }
 }
